@@ -1,0 +1,226 @@
+/* avoid content being hidden under fixed header/footer */
+body {
+  padding-top: 56px;
+  padding-bottom: 70px;
+}
+
+/* make footer stick to bottom */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Exo 2 Medium Italic for the brand */
+.navbar-brand {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* === Rock-Band Palette === */
+:root {
+  --bg-primary:    #1a1a1a;
+  --bg-secondary:  #333333;
+  --accent-red:    #c62828;
+  --text-main:     #ffffff;
+  --highlight:     #ffc107;
+}
+
+/* apply base colors */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+/* navbar (override Bootstrap defaults) */
+.navbar {
+  background-color: var(--bg-secondary) !important;
+}
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: var(--text-main) !important;
+  transition: color .2s;
+}
+.navbar-nav .nav-link:hover {
+  color: var(--accent-red) !important;
+}
+
+/* footer */
+.footer {
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* links and buttons */
+a {
+  color: var(--accent-red);
+}
+a:hover {
+  color: var(--highlight);
+  text-decoration: none;
+}
+.btn-accent {
+  background-color: var(--accent-red);
+  border-color: var(--accent-red);
+  color: var(--text-main);
+}
+.btn-accent:hover {
+  background-color: var(--highlight);
+  border-color: var(--highlight);
+  color: var(--bg-primary);
+}
+
+/* table styling */
+.table thead {
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
+}
+.table tbody tr:hover {
+  background-color: rgba(198,40,40,0.1);
+}
+
+.list-group-item {
+  color: black;
+
+}
+
+td {
+  color: white;
+}
+
+/* jumbotron hero overlay tweak (optional) */
+.jumbotron {
+  position: relative;
+  margin-top: 0;     /* assume body padding is doing the header offset */
+  /* shift the image 56px lower inside the jumbotron */
+  background:
+    url('images/hero.jpg') center/cover no-repeat;
+  background-position-y: 56px;
+  height: 60vh;
+}
+
+.jumbotron::after { /* your overlay */
+  content: '';
+  /* position: absolute; */
+  inset: 0;
+  background: rgba(26,26,26,0.6);
+  z-index: 2;
+}
+.jumbotron .container {
+  position: relative;
+  z-index: 3;
+}
+
+/* -----------------------------
+   Responsive tweaks
+   ----------------------------- */
+
+/* Extra-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  /* Hero: shorter & focus top of image */
+  .jumbotron {
+    height: 40vh;
+    background-position: center top;
+  }
+  .jumbotron h1.display-4 {
+    font-size: 2rem;
+  }
+  .jumbotron p.lead {
+    font-size: 1rem;
+  }
+
+  /* Reduce container padding */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Band list → 2 columns */
+  .list-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  .list-group-item {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+
+  /* Tables scroll horizontally */
+  .table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table th,
+  .table td {
+    white-space: nowrap;
+    font-size: 0.85rem;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .jumbotron {
+    height: 50vh;
+    background-position: center center;
+  }
+  .jumbotron h1.display-4 {
+    font-size: 2.5rem;
+  }
+  .jumbotron p.lead {
+    font-size: 1.1rem;
+  }
+
+  /* Band list → 3 columns */
+  .list-group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .jumbotron {
+    height: 55vh;
+  }
+  .jumbotron h1.display-4 {
+    font-size: 3rem;
+  }
+  .jumbotron p.lead {
+    font-size: 1.25rem;
+  }
+
+  /* Keep band list at 3 columns but larger text */
+  .list-group-item {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Optional: adjust navbar padding on small screens */
+@media (max-width: 767.98px) {
+  .navbar {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+  .navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
