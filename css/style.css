@@ -205,6 +205,15 @@ td {
   }
 }
 
+@media (min-width: 992px) {
+  .jumbotron {
+    height: calc(100vh - 56px);
+    min-height: 900px;
+    background-position: center center;
+  }
+}
+
+
 /* Optional: adjust navbar padding on small screens */
 @media (max-width: 767.98px) {
   .navbar {
