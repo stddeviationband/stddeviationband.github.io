@@ -223,3 +223,18 @@ td {
     min-height: 900px;
   }
 }
+
+/* let the hero size itself to a 16:9 ratio, rather than a fixed viewport height */
+.jumbotron {
+  height: auto;            /* override any previous vh */
+  aspect-ratio: 16 / 9;    /* modern browsers will size height based on width */
+  min-height: 200px;        /* fallback minimum so it never collapses too small */
+}
+
+/* further shrink on tiny phones */
+@media (max-width: 575.98px) {
+  .jumbotron {
+    aspect-ratio: auto;     /* turn off ratio so you can control height directly */
+    height: 30vh;           /* just 30% of viewport height on the smallest screens */
+  }
+}
