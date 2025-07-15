@@ -119,18 +119,36 @@ td {
   height: 60vh;   /* default for large screens */
 }
 
-/* .jumbotron::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(26,26,26,0.1);
-  z-index: 2;
-} */
-
 .jumbotron .container {
   position: relative;
   z-index: 3;
 }
+
+/* Social icon container */
+.social-links {
+  margin-top: 0.5rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--accent-red);
+  color: var(--text-main);
+  border-radius: 50%;
+  margin: 0 0.25rem;
+  font-size: 1.1rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.social-links a:hover {
+  background: var(--highlight);
+  color: var(--bg-primary);
+}
+
+
 
 /* ----------------------------------------
    Responsive Tweaks
