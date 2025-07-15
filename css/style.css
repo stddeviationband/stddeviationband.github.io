@@ -38,6 +38,7 @@ body {
 /* navbar (override Bootstrap defaults) */
 .navbar {
   background-color: var(--bg-secondary) !important;
+  z-index: 1000;
 }
 .navbar-brand,
 .navbar-nav .nav-link {
