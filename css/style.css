@@ -254,3 +254,24 @@ td {
     height: 30vh;           /* just 30% of viewport height on the smallest screens */
   }
 }
+
+/* ==========================================================================
+   Gallery Grid (auto-sized like table cells)
+   ========================================================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* ensure every image fills its “cell” responsively */
+.gallery-grid img {
+  width: 100%;
+  /* pick whatever ratio you like: 1/1 for square, 16/9 for widescreen, etc. */
+  aspect-ratio: 1 / 1;    
+  object-fit: cover;      
+  object-position: center;
+  border-radius: 0.25rem; /* optional rounding */
+}
+
+
