@@ -4,16 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon">
-   <!-- Font Awesome v5 -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
   <title>Standard DeViation – Shows</title>
-  <link rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-          <!-- Google Fonts: Exo 2 Medium Italic -->
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -22,26 +16,57 @@
   <div data-include="partials/header.html"></div>
 
   <main class="container my-5">
-    <h1>Shows</h1>
-    <div class="table-responsive">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+      <h1 class="mb-0">Shows</h1>
+      <a href="mailto:cboshdave@gmail.com,erikburton1@gmail.com?subject=Booking Inquiry: Standard DeViation" class="btn btn-primary btn-lg">
+        <i class="fas fa-calendar-check mr-2"></i>Book the Band
+      </a>
+    </div>
+
+    <h2 class="h4 mb-3">2026 Schedule</h2>
+    <div class="table-responsive mb-5">
       <table class="table table-striped table-sm">
         <thead>
           <tr><th>Date</th><th>Venue</th><th>City</th><th>Performance Time</th><th>Website</th></tr>
         </thead>
         <tbody>
-          <tr><td>Aug 7, 2025</td><td>Home Turf Pop-Up</td><td>Riverton, UT</td><td>TBD</td><td></td></tr>
-          <tr><td>Aug 9, 2025</td><td>Bluffdale Old West Days</td><td>Bluffdale, UT</td><td>Main Stage<br>3:15 pm - 4:30 pm</td><td><a href="https://bluffdale.gov/659/9464/Festival"
-            target="_blank" rel="noopener">
-            Concert &amp; Fireworks
-          </a></td></tr>
-          <tr><td>Aug 23, 2025</td><td>Highland Home Turf Show</td><td>Highland, UT</td><td>TBD</td><td></td></tr>
-          <!-- add more as needed -->
+          <tr>
+            <td>June 13, 2026</td>
+            <td>Private Party</td>
+            <td>South Jordan, UT</td>
+            <td>TBD</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="5" class="text-center py-3 text-muted">
+              <em>More 2026 dates being added soon...</em>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="h4 mb-3 text-muted">2025 Past Shows</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-sm table-dark">
+        <thead>
+          <tr><th>Date</th><th>Venue</th><th>City</th><th>Performance Time</th><th>Website</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aug 7, 2025</td><td>Home Turf Pop-Up</td><td>Riverton, UT</td><td>7:00 pm</td><td></td></tr>
+          <tr><td>Aug 9, 2025</td><td>Bluffdale Old West Days</td><td>Bluffdale, UT</td><td>Main Stage<br>3:15 pm - 4:30 pm</td><td>
+            <a href="https://bluffdale.gov/659/9464/Festival" target="_blank" rel="noopener">
+              Concert &amp; Fireworks
+            </a>
+          </td></tr>
+          <tr><td>Aug 23, 2025</td><td>Highland Home Turf Show</td><td>Highland, UT</td><td>7:00 pm</td><td></td></tr>
         </tbody>
       </table>
     </div>
   </main>
 
   <div data-include="partials/footer.html"></div>
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/partials.js"></script>
