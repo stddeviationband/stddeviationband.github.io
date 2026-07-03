@@ -84,8 +84,8 @@
     /* Photo credits, keyed by category. Add more entries here as future
        events bring in other photographers. */
     const PHOTO_CREDITS = {
-      taylorsville: 'Sharley Artigas',
-      botd: 'Sharley Artigas',
+      taylorsville: { name: 'Sharley Artigas', instagram: 'https://www.instagram.com/shots.bysharley/' },
+      botd:         { name: 'Sharley Artigas', instagram: 'https://www.instagram.com/shots.bysharley/' },
     };
 
     /* ==========================================================================
@@ -183,7 +183,10 @@
     function renderCredit() {
       const credit = PHOTO_CREDITS[activeCategory];
       creditEl.innerHTML = credit
-        ? `<i class="fas fa-camera"></i> Photos by ${credit}`
+        ? `<i class="fas fa-camera"></i> Photos by
+           <a href="${credit.instagram}" target="_blank" rel="noopener noreferrer">
+             ${credit.name} <i class="fab fa-instagram"></i>
+           </a>`
         : '';
     }
 
@@ -239,7 +242,12 @@
       lightImg.src = img.src;
       lightImg.alt = img.alt;
       const credit = PHOTO_CREDITS[img.category];
-      caption.textContent = credit ? `${img.alt} — Photo by ${credit}` : (img.alt || '');
+      caption.innerHTML = credit
+        ? `${img.alt} — Photo by
+           <a href="${credit.instagram}" target="_blank" rel="noopener noreferrer" class="text-white">
+             ${credit.name} <i class="fab fa-instagram"></i>
+           </a>`
+        : (img.alt || '');
     }
 
     gridEl.addEventListener('click', function (e) {

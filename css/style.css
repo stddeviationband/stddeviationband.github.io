@@ -369,6 +369,15 @@ td {
   margin-right: 0.35rem;
 }
 
+.gallery-credit a {
+  color: var(--highlight);
+  font-style: normal;
+}
+
+.gallery-credit a:hover {
+  color: var(--accent-red);
+}
+
 @media (max-width: 575.98px) {
   .gallery-tab-btn {
     font-size: 0.8rem;
