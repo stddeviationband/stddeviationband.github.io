@@ -29,9 +29,10 @@
     <!-- Category filter tabs (built automatically from the CATEGORIES list below) -->
     <div class="gallery-tabs" id="galleryTabs"></div>
 
-    <div class="gallery-grid" id="galleryGrid">
-      <!-- Images are rendered here by JS from the GALLERY_IMAGES array -->
-    </div>
+    <!-- Photo credit — only shown for categories that have one (see PHOTO_CREDITS below) -->
+    <div class="gallery-credit" id="galleryCredit"></div>
+
+    <div class="gallery-grid" id="galleryGrid"></div>
   </main>
 
   <!-- Lightbox Modal -->
@@ -79,6 +80,13 @@
       { key: 'members',      label: 'Band Members' },
       { key: 'all',          label: 'All Photos' },
     ];
+
+    /* Photo credits, keyed by category. Add more entries here as future
+       events bring in other photographers. */
+    const PHOTO_CREDITS = {
+      taylorsville: 'Sharley Artigas',
+      botd: 'Sharley Artigas',
+    };
 
     /* ==========================================================================
        GALLERY_IMAGES
@@ -170,6 +178,14 @@
 
     const tabsEl = document.getElementById('galleryTabs');
     const gridEl = document.getElementById('galleryGrid');
+    const creditEl = document.getElementById('galleryCredit');
+
+    function renderCredit() {
+      const credit = PHOTO_CREDITS[activeCategory];
+      creditEl.innerHTML = credit
+        ? `<i class="fas fa-camera"></i> Photos by ${credit}`
+        : '';
+    }
 
     function renderTabs() {
       tabsEl.innerHTML = CATEGORIES.map(cat => `
@@ -196,6 +212,7 @@
     function setCategory(key) {
       activeCategory = key;
       renderTabs();
+      renderCredit();
       renderGrid();
     }
 
@@ -206,6 +223,7 @@
     });
 
     renderTabs();
+    renderCredit();
     renderGrid();
 
     /* ==========================================================================
@@ -220,7 +238,8 @@
       const img = currentSet[currentIndex];
       lightImg.src = img.src;
       lightImg.alt = img.alt;
-      caption.textContent = img.alt || '';
+      const credit = PHOTO_CREDITS[img.category];
+      caption.textContent = credit ? `${img.alt} — Photo by ${credit}` : (img.alt || '');
     }
 
     gridEl.addEventListener('click', function (e) {
