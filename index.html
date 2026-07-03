@@ -6,17 +6,16 @@
   <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon">
 
   <!-- Font Awesome v5 -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-/>
-
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
 
   <title>STANDARD DeVIATION – Home</title>
   <link rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        
-        <!-- Google Fonts: Exo 2 Medium Italic -->
+
+  <!-- Google Fonts: Exo 2 Medium Italic -->
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
@@ -26,7 +25,19 @@
   <div data-include="partials/header.html"></div>
 
   <!-- Hero -->
-  <div class="jumbotron jumbotron-fluid text-white">
+  <div class="hero">
+    <picture>
+      <!--
+        Once you have a separately-cropped mobile shot, save it as
+        images/hero-mobile.jpg and this line will automatically use
+        it under 576px — no other changes needed.
+      -->
+      <source media="(max-width: 575.98px)" srcset="images/hero-mobile.jpg">
+      <img src="images/hero.jpg" alt="Standard DeViation performing live on stage" class="hero-img">
+    </picture>
+    <div class="hero-overlay">
+      <img src="images/logo.png" alt="Standard DeViation - Outliers Welcome" class="hero-logo">
+    </div>
   </div>
 
   <div data-include="partials/footer.html"></div>
